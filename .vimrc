@@ -103,7 +103,7 @@ endif
 colorscheme nord
 
 " Set vim-airline theme
-let g:airline_theme='base16_nord'
+let g:airline_theme='nord'
 let g:airline#extensions#tabline#enabled=1
 
 " Status line
