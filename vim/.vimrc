@@ -105,6 +105,35 @@ colorscheme nord
 " Set vim-airline theme
 let g:airline_theme='nord'
 let g:airline#extensions#tabline#enabled=1
+" air-line
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" unicode symbols
+" let g:airline_left_sep = '»'
+" let g:airline_left_sep = '▶'
+" let g:airline_right_sep = '«'
+" let g:airline_right_sep = '◀'
+" let g:airline_symbols.linenr = '␊'
+" let g:airline_symbols.linenr = '␤'
+" let g:airline_symbols.linenr = '¶'
+" let g:airline_symbols.branch = '⎇'
+" let g:airline_symbols.paste = 'ρ'
+" let g:airline_symbols.paste = 'Þ'
+
+" airline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
 
 " Status line
 " set laststatus=2
@@ -249,7 +278,7 @@ set runtimepath+=/usr/local/opt/fzf
 " autocmd User GoyoEnter nested call <SID>goyo_enter()
 " autocmd User GoyoLeave nested call <SID>goyo_leave()
 "
-function! s:enter_writers_space()
+function! s:enter_writer_space()
     set noshowmode
     set noshowcmd
     setlocal spell
@@ -258,9 +287,10 @@ function! s:enter_writers_space()
     "
     " vim-pencil on
     set number relativenumber
+    le%40
 endfunction
 
-function! s:exit_writers_space()
+function! s:exit_writer_space()
     set showmode
     set showcmd
     setlocal nospell
@@ -268,12 +298,13 @@ function! s:exit_writers_space()
     " ...
     " vim-pencil off
     set invnumber invrelativenumber
+    le%0
 endfunction
 
 augroup writers_space
     autocmd!
-    autocmd BufNewFile,BufReadPre,BufEnter *.markdown,*.mkd,*.md,*.text,*.txt,*.asciidoc,*.adoc call <SID>enter_writers_space()
-    autocmd BufLeave *.markdown,*.mkd,*.md,*.text,*.txt,*.asciidoc,*.adoc call <SID>exit_writers_space()
+    autocmd BufNewFile,BufReadPre,BufEnter *.markdown,*.mkd,*.md,*.text,*.txt,*.asciidoc,*.adoc call <SID>enter_writer_space()
+    autocmd BufLeave *.markdown,*.mkd,*.md,*.text,*.txt,*.asciidoc,*.adoc call <SID>exit_writer_space()
 augroup END
 
 " load language specific configurations
