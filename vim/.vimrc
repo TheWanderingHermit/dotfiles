@@ -1,50 +1,41 @@
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
-filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" vundle plugin manager
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.vim/plugins')
 
 " vim colorscheme
-Plugin 'arcticicestudio/nord-vim' 
+Plug 'arcticicestudio/nord-vim' 
 " asciidoc text editing
-Plugin 'habamax/vim-asciidoctor'
+Plug 'habamax/vim-asciidoctor'
 " automatic bracket matching
-Plugin 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 " fuzzy file finding
-Plugin 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim'
 " distraciton free text editing
-" Plugin 'junegunn/goyo.vim'
+" Plug 'junegunn/goyo.vim'
 " another vim colorscheme
-Plugin 'micha/vim-colors-solarized'
+Plug 'micha/vim-colors-solarized'
 " efficient code search
-Plugin 'mileszs/ack.vim'
+Plug 'mileszs/ack.vim'
 " enable seamless code commenting
-Plugin 'preservim/nerdcommenter'
+Plug 'preservim/nerdcommenter'
 " display filetree in vim split
-Plugin 'preservim/nerdtree'
+Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 " efficient text editing
-Plugin 'reedes/vim-pencil'
+Plug 'reedes/vim-pencil'
 " seamless integration of vim with git
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 " efficient code block boundry management
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 " beautify vim statusline
-Plugin 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline'
 " themes for vim airline
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline-themes'
 " an efficient code completion engine
-Plugin 'ycm-core/YouCompleteMe'
-" another cool vim colorscheme
-Plugin 'dracula/vim', { 'name': 'dracula' }
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
 
-call vundle#end()
-" Enable filetype plugins
-filetype plugin indent on
+call plug#end()
 
 " python support for neovim
 let g:python_host_prog = '/Users/sidharthsharma/.pyenv/versions/py2neovim/bin/python'
