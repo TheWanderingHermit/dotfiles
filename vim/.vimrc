@@ -278,7 +278,6 @@ function! s:enter_writer_space()
     "
     " vim-pencil on
     set number relativenumber
-    le%40
 endfunction
 
 function! s:exit_writer_space()
@@ -289,7 +288,6 @@ function! s:exit_writer_space()
     " ...
     " vim-pencil off
     set invnumber invrelativenumber
-    le%0
 endfunction
 
 augroup writers_space
