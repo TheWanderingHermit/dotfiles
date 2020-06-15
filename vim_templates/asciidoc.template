@@ -1,0 +1,9 @@
+= 
+ifdef::env-github,env-browser[:outfilesuffix: .adoc]
+:author: 
+:revnumber: 1.0
+:keywords: 
+:description: 
+:icons: font
+:toc:
+

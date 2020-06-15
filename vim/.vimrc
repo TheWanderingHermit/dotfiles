@@ -278,7 +278,9 @@ function! s:enter_writer_space()
     "
     " vim-pencil on
     set number relativenumber
-endfunction
+    " ignore trailing #.* characters in jumping to file with gf
+    set isfname-=#
+    endfunction
 
 function! s:exit_writer_space()
     set showmode
@@ -288,11 +290,14 @@ function! s:exit_writer_space()
     " ...
     " vim-pencil off
     set invnumber invrelativenumber
+    " resest to searching file with # in name
+    set isfname+=#
 endfunction
 
 augroup writers_space
     autocmd!
     autocmd BufNewFile,BufReadPre,BufEnter *.markdown,*.mkd,*.md,*.text,*.txt,*.asciidoc,*.adoc call <SID>enter_writer_space()
+    autocmd BufNewFile *.asciidoc,*.adoc 0r ~/.vim/templates/asciidoc.template
     autocmd BufLeave *.markdown,*.mkd,*.md,*.text,*.txt,*.asciidoc,*.adoc call <SID>exit_writer_space()
 augroup END
 
