@@ -12,8 +12,6 @@ Plug 'habamax/vim-asciidoctor'
 Plug 'jiangmiao/auto-pairs'
 " fuzzy file finding
 Plug 'junegunn/fzf.vim'
-" distraciton free text editing
-" Plug 'junegunn/goyo.vim'
 " another vim colorscheme
 Plug 'micha/vim-colors-solarized'
 " efficient code search
@@ -38,8 +36,8 @@ Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
 call plug#end()
 
 " python support for neovim
-let g:python_host_prog = '/Users/sidharthsharma/.pyenv/versions/py2neovim/bin/python'
-let g:python3_host_prog = '/Users/sidharthsharma/.pyenv/versions/py3neovim/bin/python'
+let g:python_host_prog='/Users/sidharthsharma/.pyenv/versions/py2neovim/bin/python'
+let g:python3_host_prog='/Users/sidharthsharma/.pyenv/versions/py3neovim/bin/python'
 
 let mapleader = "\<Space>"
 
@@ -97,7 +95,7 @@ colorscheme nord
 let g:airline_theme='nord'
 let g:airline#extensions#tabline#enabled=1
 " air-line
-let g:airline_powerline_fonts = 1
+" let g:airline_powerline_fonts = 1
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
