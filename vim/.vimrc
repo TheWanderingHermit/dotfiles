@@ -7,21 +7,21 @@ call plug#begin('~/.vim/plugins')
 " vim colorscheme
 Plug 'arcticicestudio/nord-vim' 
 " asciidoc text editing
-Plug 'habamax/vim-asciidoctor'
+" Plug 'habamax/vim-asciidoctor'
 " automatic bracket matching
 Plug 'jiangmiao/auto-pairs'
 " fuzzy file finding
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf.vim'
 " another vim colorscheme
-Plug 'micha/vim-colors-solarized'
+" Plug 'micha/vim-colors-solarized'
 " efficient code search
-Plug 'mileszs/ack.vim'
+" Plug 'mileszs/ack.vim'
 " enable seamless code commenting
 Plug 'preservim/nerdcommenter'
 " display filetree in vim split
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 " efficient text editing
-Plug 'reedes/vim-pencil'
+" Plug 'reedes/vim-pencil'
 " seamless integration of vim with git
 Plug 'tpope/vim-fugitive'
 " efficient code block boundry management
@@ -31,15 +31,15 @@ Plug 'vim-airline/vim-airline'
 " themes for vim airline
 Plug 'vim-airline/vim-airline-themes'
 " an efficient code completion engine
-Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
+" Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
 " yet another vim colorscheme
-Plug 'dracula/vim', { 'as': 'dracula' }
+" Plug 'dracula/vim', { 'as': 'dracula' }
 
 call plug#end()
 
 " python support for neovim
-let g:python_host_prog='/Users/sidharthsharma/.pyenv/versions/py2neovim/bin/python'
-let g:python3_host_prog='/Users/sidharthsharma/.pyenv/versions/py3neovim/bin/python'
+" let g:python_host_prog='/Users/sidharthsharma/.pyenv/versions/py2neovim/bin/python'
+" let g:python3_host_prog='/Users/sidharthsharma/.pyenv/versions/py3neovim/bin/python'
 
 let mapleader = "\<Space>"
 
@@ -91,10 +91,10 @@ if has("gui_running")
 else
     set background=dark
 endif
-colorscheme solarized
+colorscheme nord
 
 " Set vim-airline theme
-let g:airline_theme='solarized'
+let g:airline_theme='nord'
 let g:airline#extensions#tabline#enabled=1
 " air-line
 let g:airline_powerline_fonts = 1
@@ -184,32 +184,32 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " ycm configuration
 
-let g:ycm_global_ycm_extra_conf='/Users/sidharthsharma/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+" let g:ycm_global_ycm_extra_conf='/Users/sidharthsharma/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+" " 
+" let g:ycm_register_as_syntastic_checker=1 "default 1
+" let g:Show_diagnostics_ui=1 "default 1
+" " will put icons in Vim's gutter on lines that have a diagnostic set.
+" " Turning this off will also turn off the YcmErrorLine and YcmWarningLine
+" " highlighting
+" let g:ycm_enable_diagnostic_signs=1
+" let g:ycm_enable_diagnostic_highlighting=0
+" let g:ycm_always_populate_location_list=1 "default 0
+" let g:ycm_open_loclist_on_ycm_diags=1 "default 1
+"  
+" let g:ycm_complete_in_strings=1 "default 1
+" let g:ycm_collect_identifiers_from_tags_files=0 "default 0
+" let g:ycm_path_to_python_interpreter='' "default ''
+"  
+" let g:ycm_server_use_vim_stdout=0 "default 0 (logging to console)
+" let g:ycm_server_log_level='info' "default info
+"  
+" let g:ycm_global_ycm_extra_conf='~/.ycm_extra_conf.py'  "where to search for .ycm_extra_conf.py if not found
+" let g:ycm_confirm_extra_conf=1
 " 
-let g:ycm_register_as_syntastic_checker=1 "default 1
-let g:Show_diagnostics_ui=1 "default 1
-" will put icons in Vim's gutter on lines that have a diagnostic set.
-" Turning this off will also turn off the YcmErrorLine and YcmWarningLine
-" highlighting
-let g:ycm_enable_diagnostic_signs=1
-let g:ycm_enable_diagnostic_highlighting=0
-let g:ycm_always_populate_location_list=1 "default 0
-let g:ycm_open_loclist_on_ycm_diags=1 "default 1
- 
-let g:ycm_complete_in_strings=1 "default 1
-let g:ycm_collect_identifiers_from_tags_files=0 "default 0
-let g:ycm_path_to_python_interpreter='' "default ''
- 
-let g:ycm_server_use_vim_stdout=0 "default 0 (logging to console)
-let g:ycm_server_log_level='info' "default info
- 
-let g:ycm_global_ycm_extra_conf='~/.ycm_extra_conf.py'  "where to search for .ycm_extra_conf.py if not found
-let g:ycm_confirm_extra_conf=1
-
-let g:ycm_goto_buffer_command='same-buffer' "[ 'same-buffer', 'horizontal-split', 'vertical-split', 'new-tab' ]
-let g:ycm_filetype_whitelist={ '*': 1 }
-let g:ycm_key_invoke_completion='<C-Space>'
-let g:ycm_autoclose_preview_window_after_completion=1
+" let g:ycm_goto_buffer_command='same-buffer' "[ 'same-buffer', 'horizontal-split', 'vertical-split', 'new-tab' ]
+" let g:ycm_filetype_whitelist={ '*': 1 }
+" let g:ycm_key_invoke_completion='<C-Space>'
+" let g:ycm_autoclose_preview_window_after_completion=1
  
 " 
 " nerdcommenter
@@ -228,7 +228,7 @@ let g:NERDToggleCheckAllLines=1
 set tags=tags;
 
 " use fzf with vim
-set runtimepath+=/usr/local/opt/fzf
+" set runtimepath+=/usr/local/opt/fzf
 
 " function! s:goyo_enter()
 "     " if executable('tmux') && strlen($TMUX)
@@ -273,37 +273,37 @@ set runtimepath+=/usr/local/opt/fzf
 " autocmd User GoyoEnter nested call <SID>goyo_enter()
 " autocmd User GoyoLeave nested call <SID>goyo_leave()
 "
-function! s:enter_writer_space()
-    set noshowmode
-    set noshowcmd
-    setlocal spell
-    setlocal complete+=kspell
-    " ...
-    "
-    " vim-pencil on
-    set number relativenumber
-    " ignore trailing #.* characters in jumping to file with gf
-    set isfname-=#
-    endfunction
+" function! s:enter_writer_space()
+"     set noshowmode
+"     set noshowcmd
+"     setlocal spell
+"     setlocal complete+=kspell
+"     " ...
+"     "
+"     " vim-pencil on
+"     set number relativenumber
+"     " ignore trailing #.* characters in jumping to file with gf
+"     set isfname-=#
+"     endfunction
 
-function! s:exit_writer_space()
-    set showmode
-    set showcmd
-    setlocal nospell
-    setlocal complete-=kspell
-    " ...
-    " vim-pencil off
-    set invnumber invrelativenumber
-    " resest to searching file with # in name
-    set isfname+=#
-endfunction
+" function! s:exit_writer_space()
+"     set showmode
+"     set showcmd
+"     setlocal nospell
+"     setlocal complete-=kspell
+"     " ...
+"     " vim-pencil off
+"     set invnumber invrelativenumber
+"     " resest to searching file with # in name
+"     set isfname+=#
+" endfunction
 
-augroup writers_space
-    autocmd!
-    autocmd BufNewFile,BufReadPre,BufEnter *.markdown,*.mkd,*.md,*.text,*.txt,*.asciidoc,*.adoc call <SID>enter_writer_space()
-    autocmd BufNewFile *.asciidoc,*.adoc 0r ~/.vim/templates/asciidoc.template
-    autocmd BufLeave *.markdown,*.mkd,*.md,*.text,*.txt,*.asciidoc,*.adoc call <SID>exit_writer_space()
-augroup END
+" augroup writers_space
+"     autocmd!
+"     autocmd BufNewFile,BufReadPre,BufEnter *.markdown,*.mkd,*.md,*.text,*.txt,*.asciidoc,*.adoc call <SID>enter_writer_space()
+"     autocmd BufNewFile *.asciidoc,*.adoc 0r ~/.vim/templates/asciidoc.template
+"     autocmd BufLeave *.markdown,*.mkd,*.md,*.text,*.txt,*.asciidoc,*.adoc call <SID>exit_writer_space()
+" augroup END
 
 " load language specific configurations
 " python
